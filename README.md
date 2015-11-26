@@ -56,7 +56,7 @@ If the returned StorageFile variable is not null, it means that your image is cr
 
 ##Nuget
 
-This library is available also on Nuget, you can also install it using the command line
+This library is available also on [Nuget](https://www.nuget.org/packages/ThresholdPhotoTask/), you can also install it using the command line
 
 ```
 Install-Package ThresholdPhotoTask
