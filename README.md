@@ -61,3 +61,9 @@ This library is available also on [Nuget](https://www.nuget.org/packages/Thresho
 ```
 Install-Package ThresholdPhotoTask
 ```
+
+##Credits
+
+Author: Luca Montanari
+
+Special thanks: The project is based on excellent guide of the Italian developer [Fela Ameghino](https://github.com/FrayxRulez/), to use the [crop task integrated in Microsoft Photo](http://blogs.msdn.com/b/italy/archive/2015/07/21/guest-post-fare-il-crop-delle-immagini-usando-l-app-foto-di-windows-10.aspx) official app for Windows 10.
