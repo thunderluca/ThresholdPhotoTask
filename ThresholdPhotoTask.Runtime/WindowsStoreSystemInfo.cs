@@ -20,7 +20,7 @@ namespace SystemInfo
     /// Do not use these methods or techniques for anything more important than that.
     /// (Note that this class was also published as SystemInfoEstimate on our blog)
     /// </remarks>
-    public static class WindowsStoreSystemInfo
+    internal static class WindowsStoreSystemInfo
     {
         private const string ModelNameKey = "System.Devices.ModelName";
         private const string ManufacturerKey = "System.Devices.Manufacturer";
@@ -74,7 +74,7 @@ namespace SystemInfo
         /// Get the processor architecture of this computer.
         /// </summary>
         /// <returns>The processor architecture of this computer.</returns>
-        public static ProcessorArchitecture GetProcessorArchitecture()
+        private static ProcessorArchitecture GetProcessorArchitecture()
         {
             try
             {
@@ -147,7 +147,6 @@ namespace SystemInfo
                 .OrderByDescending(d => d.Count())
                 .ToList();
 
-            var confidence = versionNumbers[0].Count() * 100 / microsoftVersionedDevices.Count;
             return versionNumbers.Count > 0 ? versionNumbers[0].Key : "";
         }
 
@@ -163,17 +162,17 @@ namespace SystemInfo
         [StructLayout(LayoutKind.Sequential)]
         private struct _SYSTEM_INFO
         {
-            public ushort wProcessorArchitecture;
-            public ushort wReserved;
-            public uint dwPageSize;
-            public IntPtr lpMinimumApplicationAddress;
-            public IntPtr lpMaximumApplicationAddress;
-            public UIntPtr dwActiveProcessorMask;
-            public uint dwNumberOfProcessors;
-            public uint dwProcessorType;
-            public uint dwAllocationGranularity;
-            public ushort wProcessorLevel;
-            public ushort wProcessorRevision;
+            public readonly ushort wProcessorArchitecture;
+            public readonly ushort wReserved;
+            public readonly uint dwPageSize;
+            public readonly IntPtr lpMinimumApplicationAddress;
+            public readonly IntPtr lpMaximumApplicationAddress;
+            public readonly UIntPtr dwActiveProcessorMask;
+            public readonly uint dwNumberOfProcessors;
+            public readonly uint dwProcessorType;
+            public readonly uint dwAllocationGranularity;
+            public readonly ushort wProcessorLevel;
+            public readonly ushort wProcessorRevision;
         };
     }
 

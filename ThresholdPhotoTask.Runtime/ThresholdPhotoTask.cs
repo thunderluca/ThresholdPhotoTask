@@ -21,6 +21,10 @@ namespace ThresholdPhotoTask
 
         #region Methods
 
+        /// <summary>
+        /// Determine if the current OS version is Windows 10 or above
+        /// </summary>
+        /// <returns>A boolean result of this task</returns>
         public static async Task<bool> IsWindowsTen()
         {
             var version = await SystemInfo.WindowsStoreSystemInfo.GetWindowsVersionAsync();
@@ -30,6 +34,10 @@ namespace ThresholdPhotoTask
             return major >= 10;
         }
 
+        /// <summary>
+        /// Launch the pick'n'crop task
+        /// </summary>
+        /// <returns>In case of success, a cropped image saved in StorageFile</returns>
         public async Task<StorageFile> LaunchAsync()
         {
             if (CropWidthPixels <= 0 || CropHeightPixels <= 0)
@@ -91,6 +99,9 @@ namespace ThresholdPhotoTask
             return statusStr.Contains("Success") ? OutputFile : null;
         }
 
+        /// <summary>
+        /// Async Reflection helper
+        /// </summary>
         private static MethodInfo GetAsTask()
         {
             var methods = typeof(WindowsRuntimeSystemExtensions).GetRuntimeMethods();
