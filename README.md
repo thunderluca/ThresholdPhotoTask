@@ -2,7 +2,7 @@
 
 Library to call native Windows 10 Photo crop task if you are using a Windows Phone 8.1 Runtime / Silverlight app
 
-##Requirements
+## Requirements
 
 You can include this project in applications based on:
 
@@ -11,7 +11,7 @@ You can include this project in applications based on:
 
 - Soon: Windows 8.1 and Windows Phone Silverlight 7.x/8.0; 
 
-##How to use
+## How to use
 
 There is an unique namespace to use:
 
@@ -54,7 +54,7 @@ var file = await task.LaunchAsync();
 
 If the returned StorageFile variable is not null, it means that your image is cropped successfully!
 
-##Nuget
+## Nuget
 
 This library is available also on [Nuget](https://www.nuget.org/packages/ThresholdPhotoTask/), you can also install it using the command line
 
@@ -62,7 +62,7 @@ This library is available also on [Nuget](https://www.nuget.org/packages/Thresho
 Install-Package ThresholdPhotoTask
 ```
 
-##Credits
+## Credits
 
 Author: Luca Montanari
 
